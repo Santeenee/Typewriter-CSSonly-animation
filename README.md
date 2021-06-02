@@ -1,5 +1,7 @@
 # Typewriter-CSSonly-animation
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/8edfafff-5800-4651-9b3c-dc8dcb781dd6/deploy-status)](https://app.netlify.com/sites/santeenee-typewriter/deploys)
+
 Cool typewriter animation using a monospace font.
 
 remember to set the width of your chosen text to max-content (or just use flexbox/grid like I did)
