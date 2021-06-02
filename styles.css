@@ -2,7 +2,10 @@
 
 :root {
   --bg-color: white;
-  --typewriterSpeed: 6s;
+  --typewriterSpeed: 4s;
+
+  /* if h1 changes... you must change also this */
+  --typewriterCharacters: 12;
 }
 
 *,
@@ -31,7 +34,7 @@ h1 {
 }
 
 .subtitle {
-  color: hsl(0 0% 0% / 0.7);
+  color: hsl(0 0% 0% / 0.7); /* gray */
   font-size: clamp(0.8rem, 2vw + 0.8rem, 2.5rem);
   font-weight: 400;
 }
@@ -48,15 +51,16 @@ h1::after {
 
 h1::before {
   background: var(--bg-color);
-  animation: typewriter var(--typewriterSpeed) steps(12) forwards;
+  animation: typewriter var(--typewriterSpeed) steps(var(--typewriterCharacters)) 1.5s forwards;
 }
 
 h1::after {
   background: black;
   width: .125em;
   animation: 
-  typewriter var(--typewriterSpeed) steps(12) forwards, 
-  blinkingCaret var(--typewriterSpeed) steps(24) forwards;
+  typewriter var(--typewriterSpeed) steps(var(--typewriterCharacters)) 1.5s forwards, 
+  blinkingCaret 500ms steps(var(--typewriterCharacters)) 3, 
+  blinkingCaret 500ms calc(var(--typewriterSpeed) + 1.5s) 3;
 }
 
 @keyframes typewriter {
