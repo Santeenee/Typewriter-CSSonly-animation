@@ -24,5 +24,7 @@ And I succeeded.  Kind of.
 
 > [pro](https://GitHub.com/Santeenee/Typewriter-CSSonly-animation/tree/pro) branch contains the code where I tried to improve what I've learned from the video.
 
+## [Try it!](https://santeenee-typewriter.netlify.app/)
+
 [//]: # (link-variables not working... )
 [//]: # ([video]: \(https://youtu.be/w1nhwUGsG6M \"Customizable typewriter animation with CSS\"\))
