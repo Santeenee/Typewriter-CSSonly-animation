@@ -4,7 +4,7 @@ Cool typewriter animation using a monospace font.
 
 remember to set the width of your chosen text to max-content (or just use flexbox/grid like I did)
 
-### _All work is within other branches_
+### _All the work is within other branches_
 
 > [myversion](https://GitHub.com/Santeenee/Typewriter-CSSonly-animation/tree/myversion) branch contains only the first part of this [video](https://youtu.be/w1nhwUGsG6M "Customizable typewriter animation with CSS")
 
