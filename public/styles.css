@@ -76,8 +76,9 @@ h1::after {
 
     blinkingCaret var(--caretBlinkSpeed) 
       calc(
-        calc(
-          var(--typewrSpeed) + var(--typewrDelay)) + calc(var(--caretBlinkSpeed) / 2))
+        calc(var(--typewrSpeed) + var(--typewrDelay)) 
+        + 
+        calc(var(--caretBlinkSpeed) / 2))
     infinite;
 }
 
