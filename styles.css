@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap');
 
+:root {
+  --bg-color: white;
+  --typewriterSpeed: 6s;
+}
+
 *,
 *::before,
 *::after {
@@ -10,19 +15,25 @@
 
 body {
   min-height: 100vh;
+  background-color: var(--bg-color);
   display: flex;
   flex-flow: column;
   text-align: center;
   justify-content: center;
   align-items: center;
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 1.5em;
 }
 
 h1 {
   font-size: clamp(1rem, 3vw + 1rem, 4rem);
   margin-bottom: 1.5em;
   position: relative;
+}
+
+.subtitle {
+  color: hsl(0 0% 0% / 0.7);
+  font-size: clamp(0.8rem, 2vw + 0.8rem, 2.5rem);
+  font-weight: 400;
 }
 
 h1::before,
@@ -36,14 +47,16 @@ h1::after {
 }
 
 h1::before {
-  background: white;
-  animation: typewriter 5s steps(12) forwards;
+  background: var(--bg-color);
+  animation: typewriter var(--typewriterSpeed) steps(12) forwards;
 }
 
 h1::after {
   background: black;
-  width: 3px;
-  animation: caret 10s steps(12) forwards;
+  width: .125em;
+  animation: 
+  typewriter var(--typewriterSpeed) steps(12) forwards, 
+  blinkingCaret var(--typewriterSpeed) steps(24) forwards;
 }
 
 @keyframes typewriter {
@@ -52,21 +65,8 @@ h1::after {
   }
 }
 
-@keyframes caret {
-  50% {
-    left: 100%;
-  }
-
-  55% {
-    background-color: currentColor;
-  }
-
-  60% {
-    background-color: transparent;
-  }
-
+@keyframes blinkingCaret {
   to {
-    left: 100%;
     background-color: transparent;
   }
 }
