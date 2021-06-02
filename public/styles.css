@@ -8,7 +8,7 @@
   --typewrSpeed: 4s;
   /* if <h1> changes... you must change typewrCharacters */
   --typewrCharacters: 19;
-  --typewrDelay: 1.5s;
+  --typewrDelay: 2.5s;
   --caretBlinkSpeed: 1s;
 }
 
@@ -23,9 +23,9 @@
 body {
   min-height: 100vh;
   background-color: var(--bg-color);
+  text-align: center;
   display: flex;
   flex-flow: column;
-  text-align: center;
   justify-content: center;
   align-items: center;
   font-family: 'IBM Plex Mono', monospace;
@@ -68,15 +68,9 @@ h1::after {
   background: black;
   width: .125em;
 
-  /*animation: name duration timing-function delay iteration-count direction fill-mode;*/
-  /*animation: 
-  typewriter var(--typewrSpeed) steps(var(--typewrCharacters)) var(--typewrDelay) forwards, 
-  blinkingCaret 1s steps(var(--typewrCharacters)) var(--typewrDelay) 3,
-  blinkingCaret 1s 3;*/
-
   /* write maintainable and easy-to-read code. Oops. */
   animation: 
-    blinkingCaret var(--caretBlinkSpeed) steps(var(--typewrCharacters)) 2, 
+    blinkingCaret var(--caretBlinkSpeed) steps(var(--typewrCharacters)) 3, 
 
     typewriter var(--typewrSpeed) steps(var(--typewrCharacters)) var(--typewrDelay) forwards,
 
@@ -85,7 +79,7 @@ h1::after {
         calc(
           var(--typewrSpeed) + var(--typewrDelay)) + calc(var(--caretBlinkSpeed) / 2))
     infinite;
-} 
+}
 
 @keyframes typewriter {
   to {
