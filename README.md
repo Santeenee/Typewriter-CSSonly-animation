@@ -6,6 +6,8 @@ remember to set the width of your chosen text to max-content (or just use flexbo
 
 ### _All the work is within other branches_
 
+---
+
 > [myversion](https://GitHub.com/Santeenee/Typewriter-CSSonly-animation/tree/myversion) branch contains only the first part of this [video](https://youtu.be/w1nhwUGsG6M "Customizable typewriter animation with CSS")
 
 Meaning that I copied part of that until [7:07](https://youtu.be/w1nhwUGsG6M?t=427) and there I understood how the ::before thing worked.
