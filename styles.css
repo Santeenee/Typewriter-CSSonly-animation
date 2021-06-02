@@ -2,10 +2,13 @@
 
 :root {
   --bg-color: white;
-  --typewriterSpeed: 4s;
+  
+  /* TYPEWRITER */
 
+  --typewrSpeed: 4s;
   /* if h1 changes... you must change also this */
-  --typewriterCharacters: 12;
+  --typewrCharacters: 12;
+  --typewrDelay: 1s;
 }
 
 *,
@@ -37,6 +40,11 @@ h1 {
   color: hsl(0 0% 0% / 0.7); /* gray */
   font-size: clamp(0.8rem, 2vw + 0.8rem, 2.5rem);
   font-weight: 400;
+  transform: translateY(3rem);
+  opacity: 0;
+  animation: fadeInUp 2s 
+  calc(calc(var(--typewrSpeed) + var(--typewrDelay)) + 750ms) 
+  ease forwards;
 }
 
 h1::before,
@@ -51,16 +59,15 @@ h1::after {
 
 h1::before {
   background: var(--bg-color);
-  animation: typewriter var(--typewriterSpeed) steps(var(--typewriterCharacters)) 1.5s forwards;
+  animation: typewriter var(--typewrSpeed) steps(var(--typewrCharacters)) var(--typewrDelay) forwards;
 }
 
 h1::after {
   background: black;
   width: .125em;
   animation: 
-  typewriter var(--typewriterSpeed) steps(var(--typewriterCharacters)) 1.5s forwards, 
-  blinkingCaret 500ms steps(var(--typewriterCharacters)) 3, 
-  blinkingCaret 500ms calc(var(--typewriterSpeed) + 1.5s) 3;
+  typewriter var(--typewrSpeed) steps(var(--typewrCharacters)) var(--typewrDelay) forwards, 
+  blinkingCaret 800ms steps(var(--typewrCharacters)) infinite;
 }
 
 @keyframes typewriter {
@@ -72,5 +79,12 @@ h1::after {
 @keyframes blinkingCaret {
   to {
     background-color: transparent;
+  }
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
