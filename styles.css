@@ -6,9 +6,10 @@
   /* TYPEWRITER */
 
   --typewrSpeed: 4s;
-  /* if h1 changes... you must change also this */
-  --typewrCharacters: 12;
-  --typewrDelay: 1s;
+  /* if <h1> changes... you must change typewrCharacters */
+  --typewrCharacters: 19;
+  --typewrDelay: 1.5s;
+  --caretBlinkSpeed: 1s;
 }
 
 *,
@@ -34,16 +35,17 @@ h1 {
   font-size: clamp(1rem, 3vw + 1rem, 4rem);
   margin-bottom: 1.5em;
   position: relative;
+  white-space: nowrap;
 }
 
 .subtitle {
   color: hsl(0 0% 0% / 0.7); /* gray */
   font-size: clamp(0.8rem, 2vw + 0.8rem, 2.5rem);
-  font-weight: 400;
+  font-weight: 500;
   transform: translateY(3rem);
   opacity: 0;
   animation: fadeInUp 2s 
-  calc(calc(var(--typewrSpeed) + var(--typewrDelay)) + 750ms) 
+  calc(calc(var(--typewrSpeed) + var(--typewrDelay)) + 1s) 
   ease forwards;
 }
 
@@ -65,10 +67,25 @@ h1::before {
 h1::after {
   background: black;
   width: .125em;
-  animation: 
+
+  /*animation: name duration timing-function delay iteration-count direction fill-mode;*/
+  /*animation: 
   typewriter var(--typewrSpeed) steps(var(--typewrCharacters)) var(--typewrDelay) forwards, 
-  blinkingCaret 800ms steps(var(--typewrCharacters)) infinite;
-}
+  blinkingCaret 1s steps(var(--typewrCharacters)) var(--typewrDelay) 3,
+  blinkingCaret 1s 3;*/
+
+  /* write maintainable and easy-to-read code. Oops. */
+  animation: 
+    blinkingCaret var(--caretBlinkSpeed) steps(var(--typewrCharacters)) 2, 
+
+    typewriter var(--typewrSpeed) steps(var(--typewrCharacters)) var(--typewrDelay) forwards,
+
+    blinkingCaret var(--caretBlinkSpeed) 
+      calc(
+        calc(
+          var(--typewrSpeed) + var(--typewrDelay)) + calc(var(--caretBlinkSpeed) / 2))
+    infinite;
+} 
 
 @keyframes typewriter {
   to {
@@ -77,8 +94,17 @@ h1::after {
 }
 
 @keyframes blinkingCaret {
-  to {
+  0% {
     background-color: transparent;
+  }
+  49% {
+    background-color: transparent;
+  }  
+  51% {
+    background-color: currentColor;
+  }
+  100% {
+    background-color: currentColor;
   }
 }
 
