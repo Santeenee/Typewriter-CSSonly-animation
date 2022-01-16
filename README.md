@@ -25,6 +25,8 @@ And I succeeded.  Kind of.
 ---
 
 > [pro](https://GitHub.com/Santeenee/Typewriter-CSSonly-animation/tree/pro) branch contains the code where I tried to improve what I've learned from the video.
+> 
+> the code in this branch is being used for the [website](https://santeenee-typewriter.netlify.app)
 
 ## [Try it!](https://santeenee-typewriter.netlify.app/)
 
