@@ -115,6 +115,9 @@ h1::after {
     --bg-color: #333;
     color: white;
   }
+  h1::after {
+    background: white;
+  }
   .subtitle {
     color: #ddd;
   }
