@@ -109,3 +109,13 @@ h1::after {
     transform: translateY(0);
   }
 }
+
+@media (prefers-color-scheme: dark) {
+  body {
+    --bg-color: #333;
+    color: white;
+  }
+  .subtitle {
+    color: #ddd;
+  }
+}
